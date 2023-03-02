@@ -85,7 +85,6 @@ public class Game : MonoBehaviour
         };
     }
 
-    // Spawn a random road
     GameObject SpawnRoad(RoadType type, Vector3 position)
     {
         GameObject roadToSpawn = roadStraight;
@@ -112,10 +111,8 @@ public class Game : MonoBehaviour
     List<GameObject> SpawnHouses(RoadType type, long x)
     {
         List<GameObject> houses = new();
-        int rnd = Random.Range(0, 7);
-        int rnd2 = Random.Range(0, 7); // 0, houses.Count
-
-        Debug.Log("Spawn houses: " + rnd + " houses count: " + houses.Count);
+        int rnd = Random.Range(0, houseList.Count);
+        int rnd2 = Random.Range(0, houseList.Count);
 
         switch (type)
         {
